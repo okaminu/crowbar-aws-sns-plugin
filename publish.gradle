@@ -1,0 +1,23 @@
+apply plugin: 'maven-publish'
+apply from: 'aws-credentials.gradle'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) { publication ->
+            groupId 'lt.tlistas'
+            artifactId = 'loginn-backend-aws-sns-plugin'
+            version '1.1.1'
+            from components.java
+
+            repositories {
+                maven {
+                    url 's3://repository.tlist.no/releases'
+                    credentials(AwsCredentials) {
+                        accessKey = awsCredentials.AWSAccessKeyId
+                        secretKey = awsCredentials.AWSSecretKey
+                    }
+                }
+            }
+        }
+    }
+}
