@@ -4,5 +4,5 @@ import com.amazonaws.services.sns.AmazonSNSClientBuilder
 
 class SnsClientBuilder{
 
-    fun build() = AmazonSNSClientBuilder.standard().withRegion("eu-west-1").build()!!
+    fun build() = AmazonSNSClientBuilder.standard().withRegion(System.getenv("AWS_REGION")).build()!!
 }

@@ -3,7 +3,7 @@ jacoco {
     toolVersion = "0.8.0"
 }
 
-def fileFilter = ['**/ContextFactoryKt.class*', '**/*$*$*.*', '**/AddressToGeocodeConverter.class']
+def fileFilter = ['**/*$*$*.*', '**/SnsClientBuilder.class']
 def debugTree = fileTree(dir: "${buildDir}/classes/kotlin/main", excludes: fileFilter)
 
 jacocoTestReport {
@@ -22,7 +22,7 @@ jacocoTestCoverageVerification {
             limit {
                 element = 'BUNDLE'
                 counter = "LINE"
-                minimum = 0
+                minimum = 1
             }
         }
 
