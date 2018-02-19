@@ -1,8 +1,8 @@
-package lt.tlistas.core.plugin.aws.sns
+package lt.tlistas.mobile.number.confirmation.plugin.aws.sns
 
 import com.amazonaws.services.sns.AmazonSNSClientBuilder
 
-class SnsClientBuilder{
+class SnsClientBuilder {
 
     fun build() = AmazonSNSClientBuilder.standard().withRegion(System.getenv("AWS_REGION")).build()!!
 }
