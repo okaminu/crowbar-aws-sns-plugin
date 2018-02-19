@@ -4,13 +4,10 @@ import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.InternalErrorException
 import com.amazonaws.services.sns.model.InvalidParameterException
 import com.nhaarman.mockito_kotlin.*
-import lt.tlistas.core.api.exception.GeocodeGatewayException
-import lt.tlistas.core.api.exception.InvalidMobileNumberException
-import lt.tlistas.core.api.exception.LocationNotFoundException
-import lt.tlistas.core.api.exception.SmsGatewayException
-import lt.tlistas.core.api.type.Location
-import lt.tlistas.core.plugin.aws.sns.AwsSmsGatewayAdapter
-import lt.tlistas.core.plugin.aws.sns.SnsClientBuilder
+import lt.tlistas.mobile.number.confirmation.exception.InvalidMobileNumberException
+import lt.tlistas.mobile.number.confirmation.exception.SmsGatewayException
+import lt.tlistas.mobile.number.confirmation.plugin.aws.sns.AwsSmsGatewayAdapter
+import lt.tlistas.mobile.number.confirmation.plugin.aws.sns.SnsClientBuilder
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -18,7 +15,6 @@ import org.junit.rules.ExpectedException
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
-import kotlin.test.assertEquals
 
 @RunWith(MockitoJUnitRunner::class)
 class AwsSmsGatewayAdapterTest {
