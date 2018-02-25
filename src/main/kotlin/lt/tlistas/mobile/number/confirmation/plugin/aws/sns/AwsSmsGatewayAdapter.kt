@@ -5,7 +5,7 @@ import com.amazonaws.services.sns.model.InvalidParameterException
 import com.amazonaws.services.sns.model.PublishRequest
 import lt.tlistas.mobile.number.confirmation.api.ConfirmationMessageGateway
 import lt.tlistas.mobile.number.confirmation.api.exception.ConfirmationMessageGatewayException
-import lt.tlistas.mobile.number.confirmation.api.exception.InvalidMobileNumberException
+import lt.tlistas.mobile.number.confirmation.api.exception.InvalidAddressException
 
 class AwsSmsGatewayAdapter(private val snsClientBuilder: SnsClientBuilder) : ConfirmationMessageGateway {
 
@@ -17,7 +17,7 @@ class AwsSmsGatewayAdapter(private val snsClientBuilder: SnsClientBuilder) : Con
         } catch (e: InternalErrorException) {
             throw ConfirmationMessageGatewayException("Api exception ${e.message}")
         } catch (e: InvalidParameterException) {
-            throw InvalidMobileNumberException("Mobile number $address is invalid")
+            throw InvalidAddressException("Address $address is not valid")
         }
     }
 }
