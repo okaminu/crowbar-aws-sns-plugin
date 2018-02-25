@@ -4,8 +4,8 @@ import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.InternalErrorException
 import com.amazonaws.services.sns.model.InvalidParameterException
 import com.nhaarman.mockito_kotlin.*
-import lt.tlistas.mobile.number.confirmation.exception.InvalidMobileNumberException
-import lt.tlistas.mobile.number.confirmation.exception.SmsGatewayException
+import lt.tlistas.mobile.number.confirmation.api.exception.ConfirmationMessageGatewayException
+import lt.tlistas.mobile.number.confirmation.api.exception.InvalidMobileNumberException
 import lt.tlistas.mobile.number.confirmation.plugin.aws.sns.AwsSmsGatewayAdapter
 import lt.tlistas.mobile.number.confirmation.plugin.aws.sns.SnsClientBuilder
 import org.junit.Before
@@ -46,7 +46,7 @@ class AwsSmsGatewayAdapterTest {
 
     @Test
     fun `Throws smsGatewayException on Api exception `() {
-        expectedException.expect(SmsGatewayException::class.java)
+        expectedException.expect(ConfirmationMessageGatewayException::class.java)
 
         doAnswer {
             throw mock<InternalErrorException>()
