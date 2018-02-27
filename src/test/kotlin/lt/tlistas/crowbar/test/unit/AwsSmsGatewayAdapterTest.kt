@@ -1,13 +1,13 @@
-package lt.tlistas.test.unit
+package lt.tlistas.crowbar.test.unit
 
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.InternalErrorException
 import com.amazonaws.services.sns.model.InvalidParameterException
 import com.nhaarman.mockito_kotlin.*
-import lt.tlistas.mobile.number.confirmation.api.exception.ConfirmationMessageGatewayException
-import lt.tlistas.mobile.number.confirmation.api.exception.InvalidAddressException
-import lt.tlistas.mobile.number.confirmation.plugin.aws.sns.AwsSmsGatewayAdapter
-import lt.tlistas.mobile.number.confirmation.plugin.aws.sns.SnsClientBuilder
+import lt.tlistas.crowbar.api.exception.ConfirmationMessageGatewayException
+import lt.tlistas.crowbar.api.exception.InvalidAddressException
+import lt.tlistas.crowbar.plugin.aws.sns.AwsSmsGatewayAdapter
+import lt.tlistas.crowbar.plugin.aws.sns.SnsClientBuilder
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

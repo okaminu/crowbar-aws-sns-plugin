@@ -5,7 +5,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) { publication ->
             groupId 'lt.tlistas'
-            artifactId = 'mobile-number-confirmation-aws-sns-plugin'
+            artifactId = 'crowbar-aws-sns-plugin'
             version '1.1.1'
             from components.java
 

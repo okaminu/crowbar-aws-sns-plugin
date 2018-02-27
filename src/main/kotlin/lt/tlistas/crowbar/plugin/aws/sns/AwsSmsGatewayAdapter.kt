@@ -1,11 +1,11 @@
-package lt.tlistas.mobile.number.confirmation.plugin.aws.sns
+package lt.tlistas.crowbar.plugin.aws.sns
 
 import com.amazonaws.services.sns.model.InternalErrorException
 import com.amazonaws.services.sns.model.InvalidParameterException
 import com.amazonaws.services.sns.model.PublishRequest
-import lt.tlistas.mobile.number.confirmation.api.ConfirmationMessageGateway
-import lt.tlistas.mobile.number.confirmation.api.exception.ConfirmationMessageGatewayException
-import lt.tlistas.mobile.number.confirmation.api.exception.InvalidAddressException
+import lt.tlistas.crowbar.api.ConfirmationMessageGateway
+import lt.tlistas.crowbar.api.exception.ConfirmationMessageGatewayException
+import lt.tlistas.crowbar.api.exception.InvalidAddressException
 
 class AwsSmsGatewayAdapter(private val snsClientBuilder: SnsClientBuilder) : ConfirmationMessageGateway {
 
