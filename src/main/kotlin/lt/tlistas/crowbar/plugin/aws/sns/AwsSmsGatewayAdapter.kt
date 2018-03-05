@@ -17,7 +17,7 @@ class AwsSmsGatewayAdapter(private val snsClientBuilder: SnsClientBuilder) : Con
         } catch (e: InternalErrorException) {
             throw ConfirmationMessageGatewayException("Api exception ${e.message}")
         } catch (e: InvalidParameterException) {
-            throw InvalidAddressException("Address $address is not valid")
+            throw InvalidAddressException("Mobile number $address is not valid")
         }
     }
 }

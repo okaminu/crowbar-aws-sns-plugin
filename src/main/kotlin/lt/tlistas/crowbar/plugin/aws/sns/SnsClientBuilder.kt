@@ -4,5 +4,5 @@ import com.amazonaws.services.sns.AmazonSNSClientBuilder
 
 class SnsClientBuilder {
 
-    fun build() = AmazonSNSClientBuilder.standard().build()!!
+    fun build() = AmazonSNSClientBuilder.defaultClient()!!
 }
