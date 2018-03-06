@@ -1,4 +1,4 @@
-![Alt text](logo.jpg?raw=true)
+![Alt text](crowbar-logo.jpg?raw=true) ![Alt text](aws-logo.png?raw=true)
 # Crowbar AWS SNS Plugin
 Crowbar library plugin, which uses Amazon SNS service as message provider, to deliver a confirmation code via SMS.  
 
