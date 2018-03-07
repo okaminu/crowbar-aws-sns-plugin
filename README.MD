@@ -2,14 +2,21 @@
 # Crowbar AWS SNS Plugin
 Crowbar library plugin, which uses Amazon SNS service as message provider, to deliver a confirmation code via SMS.  
 
-* Crowbar library for user authentication is provided as [a separate project](https://github.com/tlistas/Crowbar).
-* Crowbar API is also provided as [a separate project](https://github.com/tlistas/Crowbar_API).
 
 ### Download
 
 ### Usage
-* The plugin is a runtime dependency for a [Crowbar library](https://github.com/tlistas/Crowbar). 
-* It uses AWS SDK for Java and AWS credentials have to be supplied as env. variables, as ~/.aws/credentials file or via other way described in [AWS Credentials guide](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html).
+* The plugin implements *ConfirmationMessageGateway* from Crowbar API and can be easily plugged in into the application or swapped with another plugin.
+
+```
+class YourClass(private val confirmationMessageGateway: ConfirmationMessageGateway) {
+
+    fun yourMethod(address: String, message: String) {
+        confirmationMessageGateway.send(address, message)
+    }
+}
+```
+* It uses AWS SDK for Java and AWS credentials have to be supplied as env. variables, ~/.aws/credentials file or via other way described in [AWS Credentials guide](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html).
 
 If credentials are provided as env. variables, set:
 ```
