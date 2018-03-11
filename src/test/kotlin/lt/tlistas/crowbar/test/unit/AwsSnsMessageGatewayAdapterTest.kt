@@ -1,25 +1,27 @@
 package lt.tlistas.crowbar.test.unit
 
 import com.amazonaws.services.sns.AmazonSNS
-import com.nhaarman.mockito_kotlin.any
-import com.nhaarman.mockito_kotlin.doReturn
-import com.nhaarman.mockito_kotlin.mock
-import com.nhaarman.mockito_kotlin.verify
+import com.amazonaws.services.sns.model.PublishRequest
+import com.nhaarman.mockito_kotlin.*
 import lt.tlistas.crowbar.plugin.aws.sns.AwsSnsMessageGatewayAdapter
-import lt.tlistas.crowbar.plugin.aws.sns.SnsClientBuilder
 import org.junit.Test
 
 class AwsSnsMessageGatewayAdapterTest {
 
     @Test
     fun `Sends SMS to a mobile number`() {
-        val snsClientBuilderMock = mock<SnsClientBuilder>()
+        val message = "some message"
+        val mobileNumber = "+37012345678"
         val amazonSnsMock = mock<AmazonSNS>()
-        doReturn(amazonSnsMock).`when`(snsClientBuilderMock).build()
+        val publishRequestMock = mock<PublishRequest>()
 
-        AwsSnsMessageGatewayAdapter(snsClientBuilderMock).send("someMessage", "+37012345678")
+        doReturn(publishRequestMock).`when`(publishRequestMock).withMessage(eq(message))
+        doReturn(publishRequestMock).`when`(publishRequestMock).withPhoneNumber(eq(mobileNumber))
 
-        verify(snsClientBuilderMock).build()
+        AwsSnsMessageGatewayAdapter(amazonSnsMock, publishRequestMock).send(message, mobileNumber)
+
         verify(amazonSnsMock).publish(any())
+        verify(publishRequestMock).withPhoneNumber(eq(mobileNumber))
+        verify(publishRequestMock).withMessage(eq(message))
     }
 }
