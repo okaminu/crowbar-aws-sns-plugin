@@ -6,16 +6,7 @@ Crowbar library plugin, which uses Amazon SNS service as message provider, to de
 ### Download
 
 ### Usage
-* The plugin implements *ConfirmationMessageGateway* from Crowbar API and can be easily plugged in into the application or swapped with another plugin.
-
-```
-class YourClass(private val confirmationMessageGateway: ConfirmationMessageGateway) {
-
-    fun yourMethod(address: String, message: String) {
-        confirmationMessageGateway.send(address, message)
-    }
-}
-```
+* The plugin implements *ConfirmationMessageGateway* from Crowbar API and is plugged into the Crowbar library manually or using an IOC container.
 * It uses AWS SDK for Java and AWS credentials have to be supplied as env. variables, ~/.aws/credentials file or via other way described in [AWS Credentials guide](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html).
 
 If credentials are provided as env. variables, set:
