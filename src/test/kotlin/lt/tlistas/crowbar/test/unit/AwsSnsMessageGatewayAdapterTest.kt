@@ -5,11 +5,11 @@ import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.doReturn
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
-import lt.tlistas.crowbar.plugin.aws.sns.AwsSmsGatewayAdapter
+import lt.tlistas.crowbar.plugin.aws.sns.AwsSnsMessageGatewayAdapter
 import lt.tlistas.crowbar.plugin.aws.sns.SnsClientBuilder
 import org.junit.Test
 
-class AwsSmsGatewayAdapterTest {
+class AwsSnsMessageGatewayAdapterTest {
 
     @Test
     fun `Sends SMS to a mobile number`() {
@@ -17,7 +17,7 @@ class AwsSmsGatewayAdapterTest {
         val amazonSnsMock = mock<AmazonSNS>()
         doReturn(amazonSnsMock).`when`(snsClientBuilderMock).build()
 
-        AwsSmsGatewayAdapter(snsClientBuilderMock).send("someMessage", "+37012345678")
+        AwsSnsMessageGatewayAdapter(snsClientBuilderMock).send("someMessage", "+37012345678")
 
         verify(snsClientBuilderMock).build()
         verify(amazonSnsMock).publish(any())
