@@ -26,5 +26,7 @@ AWS_REGION
 ```
 * Provided mobile number has to be in the E.164 format.  For example, a U.S. phone number in E.164 format would appear as +1XXX5550100.
 * Set SMS preferences for you AWS account according to [AWS documentation](https://docs.aws.amazon.com/sns/latest/dg/SMSMessages.html)
+
 ### License
 
+This library is licensed under MIT. Full license text is available in [LICENSE](https://github.com/tlistas/Crowbar_AWS_SNS_Plugin/blob/TLIST-466-mobile-confirmation/LICENSE.txt).
