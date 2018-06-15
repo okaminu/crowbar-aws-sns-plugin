@@ -1,4 +1,4 @@
-package lt.tlistas.crowbar.plugin.aws.sns
+package lt.boldadmin.crowbar.plugin.aws.sns
 
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.AmazonSNSClientBuilder
