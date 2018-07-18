@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile "lt.boldadmin.crowbar:crowbar-aws-sns-plugin:1.1.1"
+    compile "lt.boldadmin.crowbar:crowbar-aws-sns-plugin:1.3.0"
 }
 ```
 * Maven
@@ -33,7 +33,7 @@ dependencies {
     <dependency>
         <groupId>lt.boldadmin.crowbar</groupId>
         <artifactId>crowbar-aws-sns-plugin</artifactId>
-        <version>1.1.1</version>
+        <version>1.3.0</version>
     </dependency>
 </dependencies>
 ```
