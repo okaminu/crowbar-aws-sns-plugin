@@ -1,4 +1,4 @@
-package lt.boldadmin.crowbar.test.unit
+package lt.boldadmin.crowbar.plugin.aws.sns.test.unit
 
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
