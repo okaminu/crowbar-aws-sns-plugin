@@ -2,7 +2,7 @@ package lt.boldadmin.crowbar.plugin.aws.sns.test.unit
 
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishRequest
-import com.nhaarman.mockito_kotlin.*
+import com.nhaarman.mockitokotlin2.*
 import lt.boldadmin.crowbar.plugin.aws.sns.AwsSnsMessageGatewayAdapter
 import org.junit.Test
 
