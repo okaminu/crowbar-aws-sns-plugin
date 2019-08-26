@@ -11,7 +11,7 @@ repositories {
 dependencies {
     implementation "lt.boldadmin.crowbar:crowbar-api:$gradle.ext.version"
 
-    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.595')
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.603')
     implementation 'com.amazonaws:aws-java-sdk-sns'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
