@@ -5,13 +5,16 @@ import com.amazonaws.services.sns.AmazonSNSClientBuilder
 import com.amazonaws.services.sns.model.PublishRequest
 import lt.boldadmin.crowbar.api.ConfirmationMessageGateway
 
-class AwsSnsMessageGatewayAdapter(private val snsClient: AmazonSNS = AmazonSNSClientBuilder.defaultClient(),
-                                  private val publishRequest: PublishRequest = PublishRequest()
-) : ConfirmationMessageGateway {
+class AwsSnsMessageGatewayAdapter(
+    private val snsClient: AmazonSNS = AmazonSNSClientBuilder.defaultClient(),
+    private val publishRequest: PublishRequest = PublishRequest()
+): ConfirmationMessageGateway {
 
     override fun send(message: String, address: String) {
-        snsClient.publish(publishRequest
+        snsClient.publish(
+            publishRequest
                 .withMessage(message)
-                .withPhoneNumber(address))
+                .withPhoneNumber(address)
+        )
     }
 }
