@@ -15,6 +15,8 @@ dependencies {
     implementation 'com.amazonaws:aws-java-sdk-sns'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$detekt_version"
+
     testImplementation "org.junit.jupiter:junit-jupiter:5.5.1"
     testImplementation "io.mockk:mockk:1.9.3"
 
