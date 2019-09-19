@@ -9,7 +9,7 @@ Crowbar library plugin, which uses Amazon SNS service as message provider, to de
 repositories {
     repositories {
         maven {
-            url 'http://repository.boldadmin.com.s3.amazonaws.com/releases/'
+            url 'http://repository.boldadmin.com.s3.amazonaws.com/snapshots/'
         }
     }
 }
@@ -22,9 +22,9 @@ dependencies {
 ```
 <repositories>
     <repository>
-        <id>boldadmin-release-repo</id>
-        <name>BoldAdmin Release Repository</name>
-        <url>http://repository.boldadmin.com.s3.amazonaws.com/releases/</url>
+        <id>boldadmin-snapshot-repo</id>
+        <name>BoldAdmin Snapshot Repository</name>
+        <url>http://repository.boldadmin.com.s3.amazonaws.com/snapshots/</url>
     </repository>
 </repositories>
 
